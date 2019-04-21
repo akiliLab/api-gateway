@@ -62,6 +62,8 @@ github.com/stretchr/testify v1.3.0 h1:TivCn/peBQ7UY8ooIcPgZFpTNSz0Q2U6UrFlUfqbe0
 github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=
 github.com/ubunifupay/balance v0.0.0-20190421135647-20784d982d9f h1:Dxcl/Eg8D19WE/9/Em1cDp+uyIiqv/1PDAanuj+YU0c=
 github.com/ubunifupay/balance v0.0.0-20190421135647-20784d982d9f/go.mod h1:FPjleph58Owy8DpRL78CZ/f//g1vJVECEWx/szp2tRw=
+github.com/ubunifupay/db v0.0.0-20190421141246-a67afe691ec9 h1:ixIuyYxSijbK8syRbD9cCf5fzp/iFa0y4x+gL2Lg2Sg=
+github.com/ubunifupay/db v0.0.0-20190421141246-a67afe691ec9/go.mod h1:2pYHyGtFCgplNCksn3U/fID9KWsweKxvqAlcWpEvsfk=
 github.com/ubunifupay/transaction v0.0.0-20190421140331-9046d432d898 h1:KiAQs6lTGPos6wK2KltMNODvMD24doVi5J6/KQqJC9g=
 github.com/ubunifupay/transaction v0.0.0-20190421140331-9046d432d898/go.mod h1:EEAx/le1/Dyw+I9QCa7NvETi3yqZ7uS+gWTWejAxhpY=
 github.com/ugorji/go v1.1.4 h1:j4s+tAvLfL3bZyefP2SEWmhBzmuIlH/eqNuPdFPgngw=
