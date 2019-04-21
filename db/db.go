@@ -4,7 +4,7 @@ import (
 	"math/rand"
 	"time"
 
-	pb "github.com/MAKOSCAFEE/malengo-pay/transaction/pb"
+	pb "github.com/ubunifupay/transaction/pb"
 
 	"github.com/scylladb/gocqlx"
 	"github.com/scylladb/gocqlx/qb"

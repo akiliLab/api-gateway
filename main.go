@@ -6,9 +6,9 @@ import (
 
 	"fmt"
 
-	balance "github.com/MAKOSCAFEE/malengo-pay/balance/pb"
-	"github.com/MAKOSCAFEE/malengo-pay/db"
-	transaction "github.com/MAKOSCAFEE/malengo-pay/transaction/pb"
+	balance "github.com/ubunifupay/balance/pb"
+	"github.com/ubunifupay/db"
+	transaction "github.com/ubunifupay/transaction/pb"
 
 	"github.com/gin-gonic/gin"
 	"github.com/golang/protobuf/ptypes"

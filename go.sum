@@ -1,14 +1,5 @@
 cloud.google.com/go v0.26.0/go.mod h1:aQUYkXzVsufM+DwF1aE+0xfcU+56JwCaLick0ClmMTw=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
-github.com/MAKOSCAFEE/malengo-pay v0.0.0-20190420100946-cacdf825a76b/go.mod h1:rV5svG960Ozs8cwbsPWnKwJxCMDLXrxKcnGo/3Svy+I=
-github.com/MAKOSCAFEE/malengo-pay v0.0.0-20190421103746-93ab9fe6a104/go.mod h1:5WJiAZ4s3MfOzBJdmrdI9Kn4svpCGvoA1VkIsaLQdto=
-github.com/MAKOSCAFEE/malengo-pay/balance v0.0.0-20190420100946-cacdf825a76b/go.mod h1:JUNJdvw+w3WbfiynRkoq4JE8Bh/y+S1M+985Lv5Zj/M=
-github.com/MAKOSCAFEE/malengo-pay/balance v0.0.0-20190420113132-be35c2271c62/go.mod h1:JUNJdvw+w3WbfiynRkoq4JE8Bh/y+S1M+985Lv5Zj/M=
-github.com/MAKOSCAFEE/malengo-pay/balance v0.0.0-20190421104451-a23831b15d53 h1:/+3cf2owW0sgN2nyG0MxXGMEj6MJZboY3fNzYLv9Tf0=
-github.com/MAKOSCAFEE/malengo-pay/balance v0.0.0-20190421104451-a23831b15d53/go.mod h1:JUNJdvw+w3WbfiynRkoq4JE8Bh/y+S1M+985Lv5Zj/M=
-github.com/MAKOSCAFEE/malengo-pay/transaction v0.0.0-20190420135942-a5705786e32f/go.mod h1:V5pPA92SabfgNsSrlsojc4j3QWrUgJmvE1QGlpXIQTU=
-github.com/MAKOSCAFEE/malengo-pay/transaction v0.0.0-20190421104451-a23831b15d53 h1:ouhzzb8cbJYNle49LfOWoljLwBXniRGqy10kXk1hi2w=
-github.com/MAKOSCAFEE/malengo-pay/transaction v0.0.0-20190421104451-a23831b15d53/go.mod h1:Gsa+dt9EcSb4ZPk3RIZa5C49K+4VXiq2lmFs87yNEqM=
 github.com/bitly/go-hostpool v0.0.0-20171023180738-a3a6125de932 h1:mXoPYz/Ul5HYEDvkta6I8/rnYM5gSdSV2tJ6XbZuEtY=
 github.com/bitly/go-hostpool v0.0.0-20171023180738-a3a6125de932/go.mod h1:NOuUCSz6Q9T7+igc/hlvDOUdtWKryOrtFyIVABv/p7k=
 github.com/bmizerany/assert v0.0.0-20160611221934-b7ed37b82869 h1:DDGfHa7BWjL4YnC6+E63dPcxHo2sUxDIu8g3QgEJdRY=
@@ -69,6 +60,10 @@ github.com/scylladb/gocqlx v1.2.2/go.mod h1:JaWa8ty8nQ0sK7fmV0CeuzAlN2+B71GD0juU
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/testify v1.3.0 h1:TivCn/peBQ7UY8ooIcPgZFpTNSz0Q2U6UrFlUfqbe0Q=
 github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=
+github.com/ubunifupay/balance v0.0.0-20190421135647-20784d982d9f h1:Dxcl/Eg8D19WE/9/Em1cDp+uyIiqv/1PDAanuj+YU0c=
+github.com/ubunifupay/balance v0.0.0-20190421135647-20784d982d9f/go.mod h1:FPjleph58Owy8DpRL78CZ/f//g1vJVECEWx/szp2tRw=
+github.com/ubunifupay/transaction v0.0.0-20190421140331-9046d432d898 h1:KiAQs6lTGPos6wK2KltMNODvMD24doVi5J6/KQqJC9g=
+github.com/ubunifupay/transaction v0.0.0-20190421140331-9046d432d898/go.mod h1:EEAx/le1/Dyw+I9QCa7NvETi3yqZ7uS+gWTWejAxhpY=
 github.com/ugorji/go v1.1.4 h1:j4s+tAvLfL3bZyefP2SEWmhBzmuIlH/eqNuPdFPgngw=
 github.com/ugorji/go v1.1.4/go.mod h1:uQMGLiO92mf5W77hV/PUCpI3pbzQx3CRekS0kk+RGrc=
 golang.org/x/exp v0.0.0-20190121172915-509febef88a4/go.mod h1:CJ0aWSM057203Lf6IL+f9T1iT9GByDxfZKAQTCR3kQA=
