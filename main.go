@@ -4,8 +4,6 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/ubunifupay/db"
-
 	"fmt"
 
 	balance "github.com/ubunifupay/balance/pb"
@@ -68,9 +66,6 @@ func storeTransaction(c *gin.Context) {
 }
 
 func main() {
-	// Database initialization
-	session := db.CassandraSession
-	defer session.Close()
 
 	// Routes initialization
 	r := gin.Default()
