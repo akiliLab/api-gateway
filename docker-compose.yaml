@@ -1,0 +1,38 @@
+version: '2'
+services:
+  scylla:
+    image: "scylladb/scylla"
+    ports:
+      - "9042:9042"
+    volumes:
+      - /var/lib/scylla:/var/lib/scylla
+    restart: always
+  malengopay-api:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "8080:8080"
+    links:
+      - scylla:db
+      - malengopay-balance:balance
+      - malengopay-transaction:transaction
+    depends_on:
+      - scylla
+      - malengopay-transaction
+      - malengopay-balance
+    restart: always
+  malengopay-balance:
+    build:
+      context: .
+      dockerfile: ./balance/Dockerfile
+    ports:
+      - "5001:5001"
+  malengopay-transaction:
+    build:
+      context: .
+      dockerfile: ./transaction/Dockerfile
+    ports:
+      - "5050:5050"
+    depends_on:
+      - malengopay-balance
