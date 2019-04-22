@@ -12,8 +12,10 @@ require (
 	github.com/modern-go/reflect2 v1.0.1 // indirect
 	github.com/stretchr/testify v1.3.0 // indirect
 	github.com/ubunifupay/balance v0.0.0-20190421135647-20784d982d9f
+	github.com/ubunifupay/mastercard v0.0.0-20190421233616-f4642d815998
 	github.com/ubunifupay/transaction v0.0.0-20190421140331-9046d432d898
 	github.com/ugorji/go v1.1.4 // indirect
+	google.golang.org/appengine v1.4.0 // indirect
 	google.golang.org/grpc v1.20.1
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
 	gopkg.in/go-playground/validator.v8 v8.18.2 // indirect

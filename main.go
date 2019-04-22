@@ -7,6 +7,7 @@ import (
 	"fmt"
 
 	balance "github.com/ubunifupay/balance/pb"
+	mastercard "github.com/ubunifupay/mastercard/pb"
 	transaction "github.com/ubunifupay/transaction/pb"
 
 	"github.com/gin-gonic/gin"
@@ -24,8 +25,15 @@ type TransactionJSON struct {
 	Notes       string `json:"notes"`
 }
 
+// SearchMerchant type
+type SearchMerchant struct {
+	MerchantID string `json:"merchantid"`
+	Search     int64  `json:"search"`
+}
+
 var transactionClient transaction.TransactionServiceClient
 var balanceClient balance.BalanceServiceClient
+var mastercardClient mastercard.MastercardServiceClient
 
 func getBalance(c *gin.Context) {
 
@@ -36,6 +44,25 @@ func credit(c *gin.Context) {
 }
 
 func debit(c *gin.Context) {
+
+}
+
+func queryMerchants(c *gin.Context) {
+	searchJSON := SearchMerchant{}
+	req := &mastercard.MastercardRequest{}
+	err := c.BindJSON(&searchJSON)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, "Could not parse Mastercard data.")
+	}
+	req.MerchantID = searchJSON.MerchantID
+	req.Search = searchJSON.Search
+	res, err := mastercardClient.GetMerchantIdentifiers(c, req)
+
+	if err == nil {
+		c.JSON(http.StatusOK, res)
+	} else {
+		c.JSON(http.StatusInternalServerError, "Could not process the Mastercard. "+err.Error())
+	}
 
 }
 
@@ -74,6 +101,7 @@ func main() {
 	r.GET("/balance", getBalance)
 	r.POST("/credit", credit)
 	r.POST("/debit", debit)
+	r.POST("/queryMerchants", queryMerchants)
 
 	// Setup dial with transaction service
 	conn, err := grpc.Dial("localhost:5050", grpc.WithInsecure())
@@ -88,6 +116,13 @@ func main() {
 		log.Fatalf("Dial failed: %v", err)
 	}
 	balanceClient = balance.NewBalanceServiceClient(conn)
+
+	// Setup dial with mastercard service
+	conn, err = grpc.Dial("localhost:5005", grpc.WithInsecure())
+	if err != nil {
+		log.Fatalf("Dial failed: %v", err)
+	}
+	mastercardClient = mastercard.NewMastercardServiceClient(conn)
 
 	// Listening
 	r.Run(":8080")

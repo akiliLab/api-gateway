@@ -21,10 +21,12 @@ github.com/golang/sys v0.0.0-20190419153524-e8e3143a4f4a h1:5bYuhgnDII4NSAAw1wRU
 github.com/golang/sys v0.0.0-20190419153524-e8e3143a4f4a/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 github.com/golang/text v0.3.0 h1:uI5zIUA9cg047ctlTptnVc0Ghjfurf2eZMFrod8R7v8=
 github.com/golang/text v0.3.0/go.mod h1:GUiq9pdJKRKKAZXiVgWFEvocYuREvC14NhI4OPgEjeE=
+github.com/gomodule/oauth1 v0.0.0-20181215000758-9a59ed3b0a84/go.mod h1:4r/a8/3RkhMBxJQWL5qzbOEcaQmNPIkNoI7P8sXeI08=
 github.com/google/go-genproto v0.0.0-20190418145605-e7d98fc518a7 h1:cqMlJlRrbMOXucQQJlDtBzDqlgH/E86u3runF7JJSi4=
 github.com/google/go-genproto v0.0.0-20190418145605-e7d98fc518a7/go.mod h1:VzzqZJRnGkLBvHegQrXjBqPurQTc5/KpmUdxsrq26oE=
 github.com/grpc/grpc-go v1.20.1 h1:pk72GtSPpOdZDTkPneppDMGW10HYPC7RqNJT/JvUpV0=
 github.com/grpc/grpc-go v1.20.1/go.mod h1:10oTOabMzJvdu6/UiuZezV6QK5dSlG84ov/aaiqXj38=
+github.com/joho/godotenv v1.3.0/go.mod h1:7hK45KPybAkOC6peb+G5yklZfMxEjkZhHbwpqxOKXbg=
 github.com/json-iterator/go v1.1.6 h1:MrUvLMLTMxbqFJ9kzlvat/rYZqZnW3u4wkLzWTaFwKs=
 github.com/json-iterator/go v1.1.6/go.mod h1:+SdeFBvtyEkXs7REEP0seUULqWtbJapLOCVDaaPEHmU=
 github.com/mattn/go-isatty v0.0.7 h1:UvyT9uN+3r7yLEYSlJsbQGdsaB/a0DlgWP3pql6iwOc=
@@ -40,6 +42,8 @@ github.com/stretchr/testify v1.3.0 h1:TivCn/peBQ7UY8ooIcPgZFpTNSz0Q2U6UrFlUfqbe0
 github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=
 github.com/ubunifupay/balance v0.0.0-20190421135647-20784d982d9f h1:Dxcl/Eg8D19WE/9/Em1cDp+uyIiqv/1PDAanuj+YU0c=
 github.com/ubunifupay/balance v0.0.0-20190421135647-20784d982d9f/go.mod h1:FPjleph58Owy8DpRL78CZ/f//g1vJVECEWx/szp2tRw=
+github.com/ubunifupay/mastercard v0.0.0-20190421233616-f4642d815998 h1:6Nb42JGP/xMMK32CdMlFIiCPvLJPAIlXS3SfLww5kmE=
+github.com/ubunifupay/mastercard v0.0.0-20190421233616-f4642d815998/go.mod h1:cbwEitP9KQeLtvdrXgpzwlUBP05HY8OWU4K586aBKNw=
 github.com/ubunifupay/transaction v0.0.0-20190421140331-9046d432d898 h1:KiAQs6lTGPos6wK2KltMNODvMD24doVi5J6/KQqJC9g=
 github.com/ubunifupay/transaction v0.0.0-20190421140331-9046d432d898/go.mod h1:EEAx/le1/Dyw+I9QCa7NvETi3yqZ7uS+gWTWejAxhpY=
 github.com/ugorji/go v1.1.4 h1:j4s+tAvLfL3bZyefP2SEWmhBzmuIlH/eqNuPdFPgngw=
