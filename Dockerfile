@@ -6,21 +6,13 @@ FROM golang:alpine AS builder
 # Git is required for fetching the dependencies.
 RUN apk update && apk add --no-cache git && apk add --no-cache openssh-client
 COPY . /home/api-gateway
-# for private repo pulling
-ARG SSH_KEY
-ARG SSH_KEY_PASSPHRASE
-RUN mkdir -p /root/.ssh && \
-    chmod 0700 /root/.ssh && \
-    ssh-keyscan github.com > /root/.ssh/known_hosts && \
-    echo "${SSH_KEY}" > /root/.ssh/id_rsa && \
-    chmod 600 /root/.ssh/id_rsa
+
 
 WORKDIR /home/api-gateway
 
 # Build the binary.
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o /go/bin/api-gateway
 
-RUN rm -rf /root/.ssh/
 ############################
 # STEP 2 build a small image
 ############################
