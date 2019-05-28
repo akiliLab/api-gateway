@@ -36,13 +36,13 @@ func main() {
 
 	// Create service
 	service := web.NewService(
-		web.Name("micro.akililab.api.gateway"),
+		web.Name("go.micro.api.transactions"),
 	)
 
 	service.Init()
 
 	// setup Greeter Server Client
-	ts = transaction.NewTransactionService("micro.akililab.transaction", client.DefaultClient)
+	ts = transaction.NewTransactionService("go.micro.srv.transactions", client.DefaultClient)
 
 	// Create RESTful handler (using Gin)
 
