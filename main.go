@@ -20,8 +20,6 @@ var (
 // GetTransactions : GetTransaction struct
 func (s *Server) GetTransactions(c *gin.Context) {
 
-	log.Print("Received Server.GetTransactions API request")
-
 	accountid := c.Param("accountid")
 
 	response, err := ts.GetTransactions(context.TODO(), &transaction.TransactionRequest{AccountId: accountid})
