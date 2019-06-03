@@ -5,7 +5,8 @@ import (
 	"log"
 
 	transaction "github.com/akililab/transaction/proto"
-	"github.com/gin-gonic/gin"
+	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 	"github.com/micro/go-micro/client"
 	"github.com/micro/go-web"
 )
@@ -18,7 +19,7 @@ var (
 )
 
 // GetTransactions : GetTransaction struct
-func (s *Server) GetTransactions(c *gin.Context) {
+func (s *Server) GetTransactions(c echo.Context) error {
 
 	accountid := c.Param("accountid")
 
@@ -28,7 +29,7 @@ func (s *Server) GetTransactions(c *gin.Context) {
 		c.JSON(500, err)
 	}
 
-	c.JSON(200, response)
+	return c.JSON(200, response)
 
 }
 
@@ -47,7 +48,12 @@ func main() {
 	// Create RESTful handler (using Gin)
 
 	server := new(Server)
-	router := gin.Default()
+	router := echo.New()
+
+	// Middleware
+	router.Use(middleware.Logger())
+	router.Use(middleware.Recover())
+
 	router.GET("/transactions/:accountid", server.GetTransactions)
 
 	// Register Handler
