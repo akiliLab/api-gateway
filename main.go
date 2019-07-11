@@ -1,67 +1,45 @@
 package main
 
 import (
+	"flag"
+	"net/http"
+
 	"context"
-	"log"
 
-	transaction "github.com/akililab/transaction/proto"
-	"github.com/labstack/echo/v4"
-	"github.com/labstack/echo/v4/middleware"
-	"github.com/micro/go-micro/client"
-	"github.com/micro/go-web"
+	"github.com/golang/glog"
+	"github.com/grpc-ecosystem/grpc-gateway/runtime"
+	"google.golang.org/grpc"
+
+	balance "github.com/akililab/api-gateway/proto/balance"
 )
-
-// Server : Gateway struct
-type Server struct{}
 
 var (
-	ts transaction.TransactionService
+	// the go.micro.srv.balance address
+	endpoint = flag.String("endpoint", "localhost:9080", "go.micro.srv.balance address")
 )
 
-// GetTransactions : GetTransaction struct
-func (s *Server) GetTransactions(c echo.Context) error {
+func run() error {
+	ctx := context.Background()
+	ctx, cancel := context.WithCancel(ctx)
+	defer cancel()
 
-	accountid := c.Param("accountid")
+	mux := runtime.NewServeMux()
+	opts := []grpc.DialOption{grpc.WithInsecure()}
 
-	response, err := ts.GetTransactions(context.TODO(), &transaction.TransactionRequest{AccountId: accountid})
-
+	err := balance.RegisterBalanceHandlerFromEndpoint(ctx, mux, *endpoint, opts)
 	if err != nil {
-		c.JSON(500, err)
+		return err
 	}
 
-	return c.JSON(200, response)
-
+	return http.ListenAndServe(":8080", mux)
 }
 
 func main() {
+	flag.Parse()
 
-	// Create service
-	service := web.NewService(
-		web.Name("go.micro.api.transactions"),
-	)
+	defer glog.Flush()
 
-	service.Init()
-
-	// setup Greeter Server Client
-	ts = transaction.NewTransactionService("go.micro.srv.transactions", client.DefaultClient)
-
-	// Create RESTful handler (using Gin)
-
-	server := new(Server)
-	router := echo.New()
-
-	// Middleware
-	router.Use(middleware.Logger())
-	router.Use(middleware.Recover())
-
-	router.GET("/transactions/:accountid", server.GetTransactions)
-
-	// Register Handler
-	service.Handle("/", router)
-
-	// Run server
-	if err := service.Run(); err != nil {
-		log.Fatal(err)
+	if err := run(); err != nil {
+		glog.Fatal(err)
 	}
-
 }
