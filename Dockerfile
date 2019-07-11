@@ -4,7 +4,7 @@
 FROM golang:alpine AS builder
 # Install git.
 # Git is required for fetching the dependencies.
-RUN apk update && apk add --no-cache git && apk add --no-cache openssh-client
+RUN apk update && apk add --no-cache git
 COPY . /home/api-gateway
 
 
@@ -19,7 +19,7 @@ RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o /go/bin/api-gatew
 
 FROM alpine:3.4
 
-RUN apk --no-cache --update upgrade && apk add --no-cache ca-certificates && update-ca-certificates
+RUN apk --no-cache --update upgrade
 
 EXPOSE 5001
 
