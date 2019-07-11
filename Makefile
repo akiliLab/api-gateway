@@ -11,4 +11,7 @@ test: install
 	go test ./...
 
 build:
-	 docker build -t api-gateway:v1
+	 docker build -t api-gateway:v1 .
+
+proto-gen:
+	protoc -I$(GOPATH)/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis -I. --go_out=plugins=grpc:. --grpc-gateway_out=logtostderr=true:. ./proto/balance/*.proto
