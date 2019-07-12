@@ -21,7 +21,7 @@ FROM alpine:3.4
 
 RUN apk --no-cache --update upgrade
 
-EXPOSE 5001
+EXPOSE 8080
 
 WORKDIR /root
 # Copy our static executable.
