@@ -15,7 +15,7 @@ import (
 
 var (
 	// the go.micro.srv.balance address
-	endpoint = flag.String("endpoint", "0.0.0.0:9080", "go.micro.srv.balance address")
+	endpoint = flag.String("endpoint", "balance.service:9080", "go.micro.srv.balance address")
 )
 
 func run() error {
