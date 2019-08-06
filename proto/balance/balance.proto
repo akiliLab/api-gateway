@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package balance;
 
+import "google/protobuf/empty.proto";
+
 import "google/api/annotations.proto";
 
 service Balance {
@@ -11,9 +13,18 @@ service Balance {
       body : "*"
     };
   }
+
+  rpc Health (google.protobuf.Empty) returns (HealthResponse) {
+    option (google.api.http) = {
+      get : "/v1/balance/health"
+    };
+  };
 }
 
 message Request { string account_id = 1; }
+
+
+message HealthResponse { string health = 1; }
 
 message Response {
   bool completed = 1;
