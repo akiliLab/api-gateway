@@ -15,7 +15,7 @@ import (
 
 var (
 	// the go.micro.srv.balance address
-	endpoint = env.String("BALANCE_ADDRESS", false, "localhost", "go.micro.srv.balance address")
+	endpoint = env.String("BALANCE_ADDRESS", false, "127.0.0.1:8005", "go.micro.srv.balance address")
 )
 
 func run() error {
