@@ -1,13 +1,13 @@
 package main
 
 import (
+	"context"
 	"flag"
 	"net/http"
 
-	"context"
-
 	"github.com/golang/glog"
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
+	"github.com/nicholasjackson/env"
 	"google.golang.org/grpc"
 
 	balance "github.com/akililab/api-gateway/proto/balance"
@@ -15,7 +15,7 @@ import (
 
 var (
 	// the go.micro.srv.balance address
-	endpoint = flag.String("endpoint", "127.0.0.1:9080", "go.micro.srv.balance address")
+	endpoint = env.String("BALANCE_ADDRESS", false, "localhost", "go.micro.srv.balance address")
 )
 
 func run() error {
