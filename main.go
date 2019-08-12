@@ -60,11 +60,11 @@ func run() error {
 	)
 
 	opts := []grpc.DialOption{grpc.WithInsecure()}
-	err := gw.RegisterGreetingServiceHandlerFromEndpoint(ctx, mux, "localhost:50051", opts)
+	err := gw.RegisterGreetingServiceHandlerFromEndpoint(ctx, mux, "account.dev:50051", opts)
 	if err != nil {
 		return err
 	}
-	return http.ListenAndServe(":80", mux)
+	return http.ListenAndServe(":8080", mux)
 }
 
 func getEnv(key, fallback string) string {
