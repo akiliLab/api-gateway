@@ -7,8 +7,8 @@ github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
 github.com/DataDog/datadog-go v2.2.0+incompatible/go.mod h1:LButxg5PwREeZtORoXG3tL4fMGNddJ+vMq1mwgfaqoQ=
 github.com/Microsoft/go-winio v0.4.12/go.mod h1:VhR8bwka0BXejwEJY73c50VrPtXAaKcyvVC4A4RozmA=
-github.com/akiliLab/account v0.0.0-20190813070228-1328f09e21c4 h1:MIuPbPwJWrK9BNbe8mBUvq5hRRD0ir/ZEZRSbVM/fc0=
-github.com/akiliLab/account v0.0.0-20190813070228-1328f09e21c4/go.mod h1:lLYXjowNhqKlNqZJ8CFb7DkUPl3dfaEAQ1qDOY8+Uls=
+github.com/akiliLab/account v0.0.0-20190813072456-0defdb4de988 h1:y4O8NU/3qaoKqAeHBUhbY0CKk5ZjBvM+ksjE2HmpgKQ=
+github.com/akiliLab/account v0.0.0-20190813072456-0defdb4de988/go.mod h1:lLYXjowNhqKlNqZJ8CFb7DkUPl3dfaEAQ1qDOY8+Uls=
 github.com/akililab/balance v0.0.0-20190811213045-47d7573383d7/go.mod h1:hB0OntPcL4/LOYkBEsiWDgsCC1NEKfkJssQOJ6Oviuk=
 github.com/alcortesm/tgz v0.0.0-20161220082320-9c5fe88206d7/go.mod h1:6zEj6s6u/ghQa61ZWa/C2Aw3RkjiTBOix7dkqa1VLIs=
 github.com/alecthomas/template v0.0.0-20160405071501-a0175ee3bccc/go.mod h1:LOuyumcjzFXgccqObfd/Ljyb9UuFJ6TxHnclSeseNhc=
