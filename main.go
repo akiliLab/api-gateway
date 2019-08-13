@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"os"
 
-	gw "github.com/akiliLab/account/proto"
+	account "github.com/akiliLab/account/proto"
 	lrf "github.com/banzaicloud/logrus-runtime-formatter"
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 	log "github.com/sirupsen/logrus"
@@ -60,7 +60,8 @@ func run() error {
 	)
 
 	opts := []grpc.DialOption{grpc.WithInsecure()}
-	err := gw.RegisterGreetingServiceHandlerFromEndpoint(ctx, mux, "account.dev:50051", opts)
+	accountAddress := getEnv("ACCOUNT_ADDRESS", "localhost:50051")
+	err := account.RegisterAccountServiceHandlerFromEndpoint(ctx, mux, accountAddress, opts)
 	if err != nil {
 		return err
 	}
